@@ -1,1 +1,4 @@
-This is my portfolio. I have used HTML, CSS and some Javascript to create this. 
+# My portfolio
+
+Hey! This is my portfolio. I created this using HTML, CSS and Javascsript.
+Hope you like it. 
