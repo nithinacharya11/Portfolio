@@ -1,0 +1,228 @@
+* {
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root {
+    scroll-behavior: smooth;
+    --background-color:white;
+    --secondary-color:hsl(225 85% 57%);
+    --text-color:black;
+    --intro-color: rgb(207, 204, 204);
+    --shadow-color:hsl(225 10% 83%);
+    --shadow-color-dark:hsl(225 10% 63%);
+
+    --font-size-small: 0.5rem;
+    --font-size-regular: 1rem;
+    --font-size-large: 1.5rem;
+    --font-size-xl:2rem;
+
+    --spacing-regular: 16px;
+    --spacing-small: calc(var(--spacing-regular)/2);
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container > section h2 {
+    text-align: center;
+}
+
+.intro {
+    padding: 10px ;
+    text-align: center;
+    background-color: var(--intro-color);
+}
+
+section {
+    scroll-margin-top: calc(100px - 2*var(--spacing-regular));
+}
+
+.details{
+    padding:10px ;
+}
+
+#profile-image {
+    width: 300px;
+    height: 300px ;
+    border-radius: 40px;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+    margin: auto 10px;
+
+}
+
+.social-links a{
+    text-decoration: none;
+}
+
+form#contact{
+    max-width: 400px;
+    margin:auto;
+    padding: 16px;
+    border:1px solid;
+    border-radius: 16px;
+}
+
+#contact label{
+    display: block;
+    font-weight: 600;
+
+}
+
+#contact input,
+#contact textarea,
+#contact button {
+    width:100%;
+    font-size: 1.2 rem;
+    padding: 8px;
+}
+
+
+#contact-me{
+    /* margin: 0px; */
+    padding: 16px;
+}
+
+
+
+.header{
+    padding: 16px;
+    border: 1px solid white;
+    position: sticky;
+    top: 0;
+    border-bottom: 4px solid;
+    background-color: white;
+
+}
+
+
+
+nav a{
+    text-decoration: none;
+    color: royalblue;
+}
+
+header nav> a{
+    margin-right:16px;
+    text-decoration: none;
+}
+
+header nav a:last-child{
+    margin-right: revert;
+}
+
+header nav  a:hover{
+    /* text-decoration: underline; */
+    color: black;
+}
+
+nav a:visited{
+    color: royalblue;
+}
+
+footer{
+    padding: 8px;
+    border-top: 2px solid;
+    text-align: center;
+}
+
+.mobile-nav,
+section.menu {
+    display: none;
+}
+
+
+@media(width < 500px){
+    .default-nav{
+        display:none;
+    }
+    .mobile-nav{
+        display:revert;
+    }
+    #menu-button{
+        display: block;
+        background: transparent;
+        border-radius: 6px;
+        margin-left: auto;
+    }
+    section.menu{
+        display: revert;
+        height: 0;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        background: white;
+        width: 100%;
+        transition: height 0.3s ease-in-out;
+    }
+    section.menu ul{
+        list-style: none;
+    }
+    section.menu  ul  li{
+        margin-bottom: 16px;
+        font-size: 1.5rem;
+    }
+    section.menu nav{
+        margin-top: 48px;
+    }
+    #close-menu{
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        background: transparent;
+        font-size: x-large;
+        border: none;
+    }
+}
+
+@media (width<450px){
+    #profile-image {
+        width:100%;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body{
+        --background-color: rgb(11, 11, 46);
+        --text-color:  white;
+        --intro-color: darkgrey;
+    }
+}
+
+#technologies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) ;
+    gap: 10px;
+}
+
+.card ul {
+    list-style-type: none;
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid white;
+    box-shadow: 3px 3px 14px 6px var(--shadow-color);
+    border-radius: var(--spacing-regular);
+    transition: transform 0.4s ease-in, box-shadow 0.4s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 3px 3px 18px 9px var(--shadow-color-dark);
+    transform: translateY(calc(-1*var(--spacing-small)));
+}
